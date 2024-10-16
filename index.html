@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRIZZZ - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.93);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+            background-color: rgb(37, 37, 81);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgba(0, 0, 247, 0.727);
+            font-size: 1.25rem;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+
+        nav .logo {
+            width: 100px;
+            /* Adjust the logo size */
+            height: auto;
+            margin-right: 10px;
+            /* Spacing between logo and brand name */
+        }
+
+        main hr {
+            border: 0;
+            background: lavender;
+            height: 1.2px;
+            margin: 40px 85px;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+
+        }
+
+        .firstsection>div {
+            width: 30%;
+
+        }
+
+        .leftsection {
+            width: 35px;
+            font-size: 3rem;
+            margin: 30px;
+        }
+
+        .rightsection {
+            width: 35px;
+            /*height: auto; /* Set a height if needed, for example: height: 100px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* This will hide any overflow if the image is still too large */
+        }
+
+        .rightsection img {
+            width: 100%;
+            /*height: auto; /* Ensures the image scales proportionally */
+            /*object-fit: cover; /* Makes sure the image fits the container */
+        }
+
+        .purple {
+            color: blueviolet;
+            font-style: italic
+        }
+
+        .red {
+            color: skyblue;
+            font-style: italic
+        }
+
+        #element {
+            color: skyblue;
+            text-shadow: 2px 2px 5px lightblue
+        }
+
+        .secondsection {
+            max-width: 90vw;
+            margin: auto;
+            height: 400px;
+             /* Allow horizontal scrolling */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .secondsection h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .secondsection-coding {
+            max-width: 90vw;
+            margin: auto;
+            height: 400px;
+             /* Allow horizontal scrolling */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .secondsection-coding h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Container for the timeline */
+        .timeline-container {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            padding: 20px 0;
+            gap: 50px;
+        }
+        
+        /* The horizontal line that all icons will sit on */
+        .horizontal-line {
+            position: absolute;
+            top: 60px; /* Adjust according to where you want the icons to align */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        
+        /* Individual timeline items */
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* Space between elements */
+        }
+        
+        /* The small icon/image */
+        .timeline-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            z-index: 1; /* Make sure the icons are on top of the horizontal line */
+        }
+        
+        /* Vertical lines that extend downward */
+        .vertical-line {
+            width: 2px;
+            height: 100px; /* Adjust the height of the vertical line */
+            background-color: gray;
+            margin-top: -10px; /* Adjust to align with the horizontal line */
+        }
+        
+        /* Timeline content (title and description) */
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+        }
+        
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: gray;
+            margin-top: 5px;
+        }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+        
+            .horizontal-line {
+                width: 100%;
+            }
+        
+            .vertical-line {
+                height: 70px;
+            }
+        }
+
+        /* Styling for the footer */
+.footer {
+    background-color: grey;
+    display: flex;
+    justify-content: space-around; /* Space the elements evenly */
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+}
+
+.footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+    transition: color 0.3s;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.platform-name {
+    margin-top: 5px;
+    text-align: center;
+    width: 100%; /* Ensures text is fully aligned under the icon */
+}
+
+.footer a:hover {
+    color: lightblue; /* Change text color on hover */
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+/* Styling for smaller screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer div {
+        margin-bottom: 10px;
+    }
+}
+
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <img src="background-removebg-preview.png" alt="Logo" class="logo">
+                <span
+                    style="font-size: larger; font-style: italic; font-weight: bold; text-shadow: 2px 2px 5px lightblue;">APRIZZZ</span>'s
+            </div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#1">Games</a></li>
+                    <li><a href="#2">Education</a></li>
+                    <li><a href="#3">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi , my name is <span class="purple">Arpit Upadhyay</span>
+                <div>mostly known by my in-game name<span class="red"> APRIZZZ</span></div>
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="bg.png.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondsection" id="1">
+            <h1>Past Achievements</h1>
+            <div class="timeline-container">
+                <div class="horizontal-line"></div>
+        
+                <!-- First timeline item -->
+                <div class="timeline-item">
+                    <img class="timeline-image" src="omen.png" alt="Omen Logo">
+                    <div class="vertical-line"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">VALORANT (2021-Present)</div>
+                        <div class="timeline-desc">A 5v5 FPS GAME WHERE AGENTS HAVE DIFFERENT ABILITIES. MY MAIN AGENT IS OMEN.</div>
+                    </div>
+                </div>
+        
+                <!-- Second timeline item -->
+                <div class="timeline-item">
+                    <img class="timeline-image" src="pubg.png" alt="PUBG Logo">
+                    <div class="vertical-line"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">PUBG/BGMI (2018-2021)</div>
+                        <div class="timeline-desc">A BATTLE ROYALE GAME WHERE PLAYERS FIGHT TO BE THE LAST ONE STANDING.</div>
+                    </div>
+                </div>
+        
+                <!-- Third timeline item -->
+                <div class="timeline-item">
+                    <img class="timeline-image" src="mini.png" alt="Omen Logo">
+                    <div class="vertical-line"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">MINI MILITIA (2016-2018)</div>
+                        <div class="timeline-desc">A SMALL GAME WHERE MULTIPLE PLAYERS FIGHT WITH VARIOUS GUNS.</div>
+                    </div>
+                </div>
+        
+                <!-- Fourth timeline item -->
+                <div class="timeline-item">
+                    <img class="timeline-image" src="cricker.png" alt="Omen Logo">
+                    <div class="vertical-line"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">CRICKET (2012-2016)</div>
+                        <div class="timeline-desc">A OUTSIDE SPORT INNVOLVING BAT AND BALL QUITE POPULAR IN INDIA.</div>
+                    </div>
+                </div>
+            </section>
+        
+                <!-- Add more timeline items as needed -->
+                <section class="secondsection-coding" id="2">
+                    <h1>Programming</h1>
+                    <div class="timeline-container">
+                        <div class="horizontal-line"></div>
+
+                         <!-- First timeline item -->
+                <div class="timeline-item">
+                    <img class="timeline-image" src="c.png" alt="Omen Logo">
+                    <div class="vertical-line"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">C++ (beginner)</div>
+                        </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <img class="timeline-image" src="html.png" alt="Omen Logo">
+                            <div class="vertical-line"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">HTML (beginner)</div>
+                                </div>
+                                </div>
+                
+                                        
+
+                                        <div class="timeline-item">
+                                            <img class="timeline-image" src="web.png" alt="Omen Logo">
+                                            <div class="vertical-line"></div>
+                                            <div class="timeline-content">
+                                                <div class="timeline-title"> WEB DEV (beginner)</div>
+                                                </div>
+                                        </div>
+                                        
+                
+            </div>
+        </section>
+        
+        
+        
+    </main>
+    <footer>
+        <div class="footer" id="3">
+            <div class="first">
+                <a href="https://www.linkedin.com/in/arpit-upadhyay-467530322/" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn Logo" class="footer-icon">
+                    <span class="platform-name">LinkedIn</span>
+                </a>
+            </div>
+            <div class="second">
+                <a href="https://www.instagram.com/upadhyayarpit05?igsh=d2dhMXEwaXVuMGhh" target="_blank">
+                    <img src="instagram.png" alt="Instagram Logo" class="footer-icon">
+                    <span class="platform-name">Instagram</span>
+                </a>
+            </div>
+            <div class="third">
+                <a href="mailto:upadhyayarpit2005@gmail.com">
+                    <img src="gmail.png" alt="Email Icon" class="footer-icon">
+                    <span class="platform-name" >Email</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['A hardcore gamer', 'Passionate Coder', 'Science Freak'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
